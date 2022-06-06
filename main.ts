@@ -4,6 +4,9 @@
 // LOGO -> Příkaz pro prohození barev (bílá/černá -> 1/0)
 // A -> Příkaz nastavení otočky o 180 atd. doleva
 // B -> Příkaz nastavení otočky o 180 atd. doprava
+basic.forever(function on_forever() {
+    radio.setGroup(77)
+})
 input.onPinPressed(TouchPin.P0, function on_pin_pressed_p0() {
     radio.sendString("OdbockaP")
 })

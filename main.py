@@ -4,7 +4,9 @@
 #LOGO -> Příkaz pro prohození barev (bílá/černá -> 1/0)
 #A -> Příkaz nastavení otočky o 180 atd. doleva
 #B -> Příkaz nastavení otočky o 180 atd. doprava
-
+def on_forever():
+    radio.set_group(77)
+basic.forever(on_forever)
 def on_pin_pressed_p0():
     radio.send_string("OdbockaP")
 input.on_pin_pressed(TouchPin.P0, on_pin_pressed_p0)
