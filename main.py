@@ -4,24 +4,43 @@
 #LOGO -> Příkaz pro prohození barev (bílá/černá -> 1/0)
 #A -> Příkaz nastavení otočky o 180 atd. doleva
 #B -> Příkaz nastavení otočky o 180 atd. doprava
+
+
 def on_forever():
     radio.set_group(77)
 basic.forever(on_forever)
+
+
+ # PIN 0
 def on_pin_pressed_p0():
     radio.send_string("OdbockaP")
 input.on_pin_pressed(TouchPin.P0, on_pin_pressed_p0)
+
+  # PIN 1
 def on_pin_pressed_p1():
     radio.send_string("OdbockaL")
 input.on_pin_pressed(TouchPin.P1, on_pin_pressed_p1)
+
+
+# PIN 2
 def on_pin_pressed_p2():
     radio.send_string("Otocka")
 input.on_pin_pressed(TouchPin.P2, on_pin_pressed_p2)
+
+ # LOGO
 def on_logo_event_pressed():
     radio.send_string("ProhodBarvy")
 input.on_logo_event(TouchButtonEvent.PRESSED, on_logo_event_pressed)
+ 
+ # A
 def on_button_pressed_a():
     radio.send_string("TurnBackL")
 input.on_button_pressed(Button.A, on_button_pressed_a)
+
+ #B
 def on_button_pressed_b():
     radio.send_string("TurnBackR")
 input.on_button_pressed(Button.B, on_button_pressed_b)
+
+
+#NEOBSAHUJE NAMUALNI OVLADANI !!!!
